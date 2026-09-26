@@ -1,0 +1,196 @@
+{
+  "package_version": "1.0.0",
+  "parameter_version_date": "2026-09-26",
+
+  "dataset_status": "SYNTHETIC / CONTROLLED SIMULATION DATA",
+  "original_generator_available": false,
+  "reconstruction_status": "Explicit reconstruction from archived dataset-level characteristics",
+  "row_level_identity_verified": false,
+
+  "random_seed": 20260926,
+  "random_seed_status": "New reconstruction seed; not the historical generator seed",
+
+  "records_total": 300,
+  "records_per_scenario": 50,
+
+  "network": "Ethereum Sepolia",
+  "network_context": "Ethereum Sepolia was used for prototype deployment and demonstration transactions; the 300-record performance dataset is synthetic controlled simulation data",
+
+  "execution_mode": "Controlled simulation",
+  "physical_event": false,
+  "confirmation_model": "One simulated confirmation; not a live Sepolia confirmation measurement",
+
+  "latency_generation": {
+    "distribution": "normal",
+    "distribution_status": "Explicit reconstruction choice; original historical distribution not retained",
+    "sampling_method": "50 base normal draws per scenario, then affine transformation to the predefined target mean and target sample standard deviation",
+
+    "target_means_ms": {
+      "Flight Boarding": 3210.0,
+      "Activity Entry": 3290.0,
+      "Hotel Check-In": 3420.0,
+      "Hotel Checkout": 3580.0,
+      "Restaurant Order": 3750.0,
+      "Transport Service": 3880.0
+    },
+
+    "target_sample_sd_ms": {
+      "Flight Boarding": 417.89,
+      "Activity Entry": 450.74,
+      "Hotel Check-In": 471.67,
+      "Hotel Checkout": 432.32,
+      "Restaurant Order": 494.13,
+      "Transport Service": 517.74
+    },
+
+    "note": "These values define the regenerated simulation model. They are not claimed to be the undocumented parameters of the original historical generator."
+  },
+
+  "response_time_generation": {
+    "distribution": "normal",
+    "distribution_status": "Explicit reconstruction choice; original historical distribution not retained",
+    "target_mean_ms": 336.35,
+    "target_sample_sd_ms": 47.46,
+    "sampling_method": "300 base normal draws, then affine transformation to the target mean and target sample standard deviation",
+
+    "note": "The original historical data-generation script was not retained. This parameterization documents the new explicit reconstruction model used to regenerate the response-time values."
+  },
+
+  "vendor_milestone_configuration": {
+    "vendor_count_distribution": {
+      "1": 140,
+      "2": 156,
+      "3": 3,
+      "4": 1
+    },
+
+    "milestone_count_distribution": {
+      "1": 66,
+      "2": 140,
+      "3": 92,
+      "4": 2
+    },
+
+    "direct_transfer_like_records": 61,
+    "definition": "vendor_count = 1 and milestone_count = 1",
+
+    "note": "Assignments are constructed so that exactly 61 of 300 records are direct-transfer-like, matching the archived dataset's workload structure."
+  },
+
+  "failure_schedule": [
+    {
+      "execution_id": "EXEC-0050",
+      "failure_stage": "Event Validation",
+      "retry_attempts": 2,
+      "error_recovery_time_ms": 798.46
+    },
+    {
+      "execution_id": "EXEC-0100",
+      "failure_stage": "Smart Contract Execution",
+      "retry_attempts": 2,
+      "error_recovery_time_ms": 555.49
+    },
+    {
+      "execution_id": "EXEC-0149",
+      "failure_stage": "Event Validation",
+      "retry_attempts": 1,
+      "error_recovery_time_ms": 1071.62
+    },
+    {
+      "execution_id": "EXEC-0150",
+      "failure_stage": "RPC Submission",
+      "retry_attempts": 1,
+      "error_recovery_time_ms": 835.86
+    },
+    {
+      "execution_id": "EXEC-0200",
+      "failure_stage": "RPC Submission",
+      "retry_attempts": 2,
+      "error_recovery_time_ms": 1096.37
+    },
+    {
+      "execution_id": "EXEC-0250",
+      "failure_stage": "Middleware/Oracle",
+      "retry_attempts": 1,
+      "error_recovery_time_ms": 1032.18
+    },
+    {
+      "execution_id": "EXEC-0299",
+      "failure_stage": "Blockchain Confirmation",
+      "retry_attempts": 1,
+      "error_recovery_time_ms": 1231.54
+    },
+    {
+      "execution_id": "EXEC-0300",
+      "failure_stage": "Smart Contract Execution",
+      "retry_attempts": 2,
+      "error_recovery_time_ms": 1044.26
+    }
+  ],
+
+  "failure_schedule_status": "Reconstructed from the archived final dataset; not claimed as the historical generator rule",
+
+  "failure_schedule_note": "The original historical data-generation script was not retained. This parameter file documents a new, explicit reconstruction of the controlled-simulation protocol used to regenerate the dataset for revision and reproducibility.",
+
+  "gas_usage_model": {
+    "direct_transfer_like": {
+      "distribution": "scaled_beta",
+      "distribution_status": "Explicit reconstruction choice; original historical distribution not retained",
+      "sampling_method": "Scaled beta sampling over the documented support, with beta parameters derived from the target distribution mean and standard deviation",
+
+      "min_gas": 19000,
+      "max_gas": 26211,
+      "target_mean_gas": 21116.23,
+      "target_sd_gas": 1866.41
+    },
+
+    "milestone_based_escrow": {
+      "distribution": "scaled_beta",
+      "distribution_status": "Explicit reconstruction choice; original historical distribution not retained",
+      "sampling_method": "Scaled beta sampling over the documented support, with beta parameters derived from the target distribution mean and standard deviation",
+
+      "min_gas": 56000,
+      "max_gas": 81135,
+      "target_mean_gas": 67597.73,
+      "target_sd_gas": 5327.45
+    },
+
+    "note": "The previously reported 21,000 and 68,450 values are retained as approximate path-level reference values in the manuscript discussion. The regenerated dataset reports realized gas values produced by this reconstruction model."
+  },
+
+  "gas_price_model": {
+    "distribution": "scaled_beta",
+    "distribution_status": "Explicit reconstruction choice; original historical distribution not retained",
+    "sampling_method": "Scaled beta sampling over the documented support, with beta parameters derived from the target distribution mean and standard deviation",
+
+    "min_gwei": 12.0,
+    "max_gwei": 26.382,
+    "target_mean_gwei": 18.798,
+    "target_sd_gwei": 3.009,
+
+    "source": "Synthetic simulation parameter reconstructed from the archived dataset; not a live market observation",
+    "source_date": null
+  },
+
+  "eth_to_idr_model": {
+    "distribution": "scaled_beta",
+    "distribution_status": "Explicit reconstruction choice; original historical distribution not retained",
+    "sampling_method": "Scaled beta sampling over the documented support, with beta parameters derived from the target distribution mean and standard deviation",
+
+    "min_idr_per_eth": 69880066,
+    "max_idr_per_eth": 76978237,
+    "target_mean_idr_per_eth": 73546019,
+    "target_sd_idr_per_eth": 1198705,
+
+    "source": "Synthetic simulation parameter reconstructed from the archived dataset; not a live market observation",
+    "source_date": null
+  },
+
+  "timestamp_model": {
+    "settlement_latency_formula": "T_confirmation_sim - T_submission_sim",
+    "timestamp_semantics": "Simulated timestamps constructed consistently with the generated latency values",
+    "confirmation_rule": "One simulated confirmation"
+  },
+
+  "reproducibility_note": "The original historical data-generation script was not retained. This parameter file documents a new, explicit reconstruction of the controlled-simulation protocol used to regenerate the dataset for revision and reproducibility."
+}
