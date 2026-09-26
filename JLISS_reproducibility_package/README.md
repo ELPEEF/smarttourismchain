@@ -8,6 +8,7 @@ This package contains the regenerated synthetic controlled-simulation dataset su
 - `generate_jliss_simulation.py` — deterministic reconstruction generator.
 - `JLISS_regenerated_controlled_simulation_300.csv` — regenerated 300-record dataset.
 - `RECONSTRUCTION_NOTE.md` — provenance and wording guidance.
+- `JLISS_archived_reference_dataset_300.xlsx` — is the archived synthetic dataset.
 
 ### Scope
 
